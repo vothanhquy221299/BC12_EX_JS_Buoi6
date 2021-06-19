@@ -1,10 +1,10 @@
 /**
  * Bài 1
  */
-var timSoNhoNhat = function(){
+var timSoNhoNhat = function () {
     var sum = 0;
     var n = 0;
-    while(sum < 10000){
+    while (sum < 10000) {
         n++;
         //sum sẽ được cộng dồn với n
         sum += n;
@@ -19,18 +19,18 @@ document.getElementById('noti').innerHTML = "<div> Số nguyên dương nhỏ nh
  * Bài 2:
  */
 
-var tinhTong = function(x, n){
-    var sum=0;
-    for(var i=1; i<=n; i++){
-        sum+= x**i;
+var tinhTong = function (x, n) {
+    var sum = 0;
+    for (var i = 1; i <= n; i++) {
+        sum += x ** i;
     }
     return sum;
 }
 
-document.getElementById('btnTinhTong').addEventListener('click', function(){
+document.getElementById('btnTinhTong').addEventListener('click', function () {
     var x = document.getElementById('ipX').value;
     var n = document.getElementById('ipN').value;
-    
+
     var ketQua = tinhTong(x, n);
     document.getElementById('ketQuaTinhTong').style.display = 'block';
     document.getElementById('ketQuaTinhTong').style.backgroundColor = '#f5b6da';
@@ -40,21 +40,21 @@ document.getElementById('btnTinhTong').addEventListener('click', function(){
 /**
  * Bài 3:
  */
-var tinhGiaiThua = function(soGiaiThua){
+var tinhGiaiThua = function (soGiaiThua) {
     var giaiThua = 1;
-    if(soGiaiThua==0 || soGiaiThua==1){
+    if (soGiaiThua == 0 || soGiaiThua == 1) {
         return giaiThua;
     } else {
-        for(var i=2; i<=soGiaiThua; i++){
-            giaiThua *= i; 
+        for (var i = 2; i <= soGiaiThua; i++) {
+            giaiThua *= i;
         }
         return giaiThua;
     }
 }
- console.log('Giai thừa của là: ' + tinhGiaiThua(5));
- document.getElementById('btnTinhGT').addEventListener('click', function(){
+console.log('Giai thừa của là: ' + tinhGiaiThua(5));
+document.getElementById('btnTinhGT').addEventListener('click', function () {
     var n2 = document.getElementById('ipN2').value;
-    
+
     var ketQuaGT = tinhGiaiThua(n2);
     document.getElementById('ketQuaGiaiThua').style.display = 'block';
     document.getElementById('ketQuaGiaiThua').style.backgroundColor = '#B9F6CA';
@@ -65,21 +65,14 @@ var tinhGiaiThua = function(soGiaiThua){
  * Bài 4
  */
 
-    var hienThiTheDiv = document.getElementById('theDiv');
-    var taoTheDiv = function(){
-        for(var i=1; i<=10; i++){
-            if(i % 2 == 0){
-                hienThiTheDiv.style.display = 'block';
-                hienThiTheDiv.style.color = 'white';
-                hienThiTheDiv.style.backgroundColor = 'red';
-                hienThiTheDiv.innerHTML = 'Div chẵn' + i;
-                console.log('div chan ' + i);
-            } else {
-                hienThiTheDiv.style.display = 'block';
-                hienThiTheDiv.style.color = 'white';    
-                hienThiTheDiv.style.backgroundColor = 'blue';
-                hienThiTheDiv.innerHTML = 'Div lẻ ' + i;
-                console.log('div lẻ ' + i)
-            }
+document.getElementById('btnTaoDiv').addEventListener('click', function () {
+    var theDiv = document.getElementById('theDiv');
+    for (i = 1; i <= 10; i++) {
+        if (i % 2 == 0) {
+            theDiv.innerHTML += '<div style="background-color: red; padding: 10px;"> Div chẵn ' + i + '</div>';
+        } else {
+            theDiv.innerHTML += '<div style="background-color: blue; padding: 10px;"> Div lẻ ' + i + '</div>';
         }
     }
+    theDiv.style.display = 'block';
+})
